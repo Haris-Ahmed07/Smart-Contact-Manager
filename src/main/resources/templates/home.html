@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns="http:www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Home Page</title>
+</head>
+
+<body>
+
+	<section class="banner d-flex justify-content-center align-items-center">
+
+		<div class="text-center" style="width: 80%;">
+
+
+			<h1>Smart Contact Manager</h1>
+			<p>Experience a smarter approach to managing your contacts with our innovative solution. Say goodbye to the
+				hassle of traditional contact management and embrace our efficient and effective system. We offer a
+				seamless and intelligent way to handle your contacts, ensuring that you save time and effort. Discover
+				the convenience of our cutting-edge technology and simplify your contact management process. Start
+				saving your contacts in a smarter way today.</p>
+
+			<a href="" th:href="@{/signup}">
+				<button class="btn bg-primary btn-md text-white">Get Started</button>
+			</a>
+		</div>
+	</section>
+
+</body>
+
+</html>

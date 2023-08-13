@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Login Page</title>
+</head>
+
+<body>
+
+	<section>
+		<div id="forgotpassword">
+
+			<div class="container">
+				<div id="login-row" class="row justify-content-center align-items-center">
+					<div id="login-column" class="col-md-6">
+						<div id="login-box" class="col-md-12">
+
+							<div class=" mt-2">
+								<a th:href="@{/forgot-password}"
+									style="text-decoration: none; color:#000; text-align: left;">
+									<i class="fa-solid fa-arrow-left"></i>
+								</a>
+							</div>
+
+							<div th:if="${session.message}" th:classappend="${session.message.type}"
+								class="alert alert-primary alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<p th:text="${session.message.content}"></p>
+
+								<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+							</div>
+
+
+
+							<form class="form" th:action="@{/verify-otp}" action="#" method="post"
+								style="border-radius: 10px;">
+
+								<!-- Heading -->
+								<h1 class="text-center text-info mt-3">Forgot Password</h1>
+
+
+
+
+								<!-- Email Field -->
+								<div class="form-group email-field">
+									<input min="6" max="6"  required type="text" name="otp" id="otp" class="form-control"
+										placeholder="Enter OTP here">
+								</div>
+
+								<!-- Login Button -->
+								<div class="container text-center">
+									<input type="submit" name="submit" class="btn btn-info btn-ml" value="Verify">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

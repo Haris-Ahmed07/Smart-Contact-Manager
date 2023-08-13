@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/userbase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dash Board</title>
+</head>
+
+<body>
+	<section>
+
+		<div class="container">
+			<div class="card" style="border-radius: 10px;">
+				<div class="card-body">
+
+					<div class="container text-center">
+
+						<img class="responsive-image" src="" th:src="@{/images/profiles/user_profile.png}" alt=""/>
+
+						<div class="container font-italic">
+
+							<h1>Start adding your contacts on cloud...</h1>
+
+							<a class="btn btn-primary btn lg btn-block" href="" th:href="@{/user/user_add-contact}"
+								style="background-color:#009688 !important; font-weight: bold;">ADD NEW CONTACT</a>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		
+		<script>
+			
+			$(document).ready(()=>{
+				$(".item").removeClass("active-nav")
+				$("#home-link").addClass("active-nav")
+			})
+			
+		</script>
+
+	</section>
+</body>
+
+</html>

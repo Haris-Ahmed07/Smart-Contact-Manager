@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="/user/userbase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+
+<body>
+
+	<section>
+
+		<div class="card mr-5 ml-5" style="border-radius: 10px;" th:if="${contact}">
+
+
+			<div class="card-body">
+
+
+				<div class="container">
+					<a th:href="@{/user/user_show-contacts}" class="item" style="text-decoration: none; color:#000"><i
+							class="fa-solid fa-arrow-left fa-lg"></i></a>
+				</div>
+
+				<div class="container text-center">
+					<img style="height: 200px; width: 200px;" src="" alt="profile_picture"
+						th:src="@{'/images/profiles/profile.jpeg'}" />
+
+					<h3 style="margin-top: 10px; font-weight: bold;"><span
+							th:text="${contact.name+' ( '+contact.nickName+' )'}"></span>
+					</h3>
+
+				</div>
+
+				<div class="container text-center">
+
+					<table class="table table-responsive-md">
+						<thead class="table-head">
+							<tr>
+								<th scope="col">#ID</th>
+								<th scope="col">SCM2023-<span class="contact-tag" style="color: white;"
+										th:text="${contact.cId}"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${contact.email}"></span></td>
+							</tr>
+
+							<tr>
+								<th scope="row">Phone</th>
+								<td><span th:text="${contact.phone}"></span></td>
+							</tr>
+
+							<tr>
+								<th scope="row">Work</th>
+								<td><span th:text="${contact.work}"></span></td>
+							</tr>
+
+						</tbody>
+
+					</table>
+
+					<div class="description text-center ">
+						<th:block th:utext="${contact.description}"></th:block>
+					</div>
+
+					<div class="container mt-4 text-center">
+						<form th:action="@{'/user/update/'+${contact.cId}}" method="post">
+							<button type="submit" class="btn btn-primary btn-bg btn-block">Update</button>
+						</form>
+
+						<button th:onclick="|deleteContact(${contact.cId})|"
+							class="btn btn-danger btn lg btn-block">Delete</button>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+		<div class="container text-center" th:unless="${contact}" style="height: 500px;">
+			<h1 style="background-color: red; color: white; font-weight: bold; margin-top: 190px; border-radius: 10px;">
+				Warning !! You Don't Have Permission</h1>
+		</div>
+
+		<script>
+
+			$(document).ready(() => {
+				$(".item").removeClass("active-nav")
+				$("#viewContacts-link").addClass("active-nav")
+			})
+
+		</script>
+
+
+	</section>
+
+</body>
+
+</html>

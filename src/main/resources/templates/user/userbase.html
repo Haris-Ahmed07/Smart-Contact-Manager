@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:fragment="Layout(content)">
+
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="" th:href="@{/css/mystyle.css}" />
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+	<title th:text="${title}"></title>
+</head>
+
+<body><!--This is NavBar-->
+	<header>
+		<div>
+
+			<nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary text-white bg-primary"
+				style="height: 70px;">
+				<label class="navbar-brand">Smart Contact Manager</label>
+
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<ul class="navbar-nav ml-auto text-uppercase">
+
+						<div class="text-center">
+							<li class="nav-item active">
+								<a class="nav-link" href="#" th:href="@{/user/dashboard}">Home <span
+										class="sr-only">(current)</span></a>
+							</li>
+						</div>
+
+						<li class="nav-item active">
+							<a class="nav-link" href="#" th:href="@{/user/user_profile}"><span
+									th:text="${user.name}"></span> <span class="sr-only">(current)</span></a>
+						</li>
+
+						<li class="nav-item active">
+							<a class="nav-link" href="#" th:href="@{/logout}">Logout <span
+									class="sr-only">(current)</span></a>
+						</li>
+
+
+
+
+					</ul>
+
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--END Navbar-->
+
+
+	<!--This is Side Bar-->
+	<div class="sidebar">
+
+		<span onclick="toogleSideBar()" class="crossBtn">&times;</span>
+
+		<a href="" th:href="@{/user/dashboard}" class="item active-nav" id="home-link">
+			<i class="fa-solid fa-home"></i> Home
+		</a>
+
+
+		<a href="" th:href="@{/user/user_show-contacts}" class="item active-nav" id="viewContacts-link">
+			<i class="fa-solid fa-id-card-clip"></i> View Contacts
+		</a>
+
+
+		<a href="" th:href="@{/user/user_add-contact}" class="item active-nav" id="addContact-link">
+			<i class="fa-solid fa-pencil"></i> Add Contact
+		</a>
+
+
+		<a href="" th:href="@{'/user/user_profile'}" class="item active-nav" id="yourProfile-link">
+			<i class="fa-solid fa-circle-user"></i> Your Profile
+		</a>
+
+		<a href="" th:href="@{/user/user_setting}" class="item active-nav" id="setting-link">
+			<i class="fa-sharp fa-solid fa-gear"></i> Setting
+		</a>
+
+		<a href="" th:href="@{/logout}" class="item active-nav" id="logout-link">
+			<i class="fas fa-sign-out-alt"></i> Logout
+		</a>
+
+
+		<div class="divider"></div>
+	</div>
+	<!--END Sidebar-->
+
+
+	<!--This is Content-->
+	<div class="content">
+
+		<i onclick="toogleSideBar()" class="fas fa-bars m-3"></i>
+
+		<div th:replace="${content}"></div>
+
+	</div>
+	<!--END Content-->
+
+
+
+	<footer>
+
+
+	</footer>
+
+	<script src="" th:src="@{/script/script.js}"></script>
+
+
+	<script></script>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>

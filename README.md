@@ -33,10 +33,8 @@ To get started with the Smart Contact Manager web application, follow these step
 
 1. Clone the repository: `git clone https://github.com/your-username/smart-contact-manager.git`
 2. Navigate to the project directory: `cd smart-contact-manager`
-3. Install dependencies: `<dependency-install-command>`
-4. Configure the application settings in `<config-file>` to match your environment.
-5. Run the application: `<run-command>`
-6. Access the application in your web browser at `http://localhost:<port>`
+3. Run the application: `run the projet using any IDE`
+4. Access the application in your web browser at `http://localhost:8080`
 
 ## Why Choose Smart Contact Manager
 

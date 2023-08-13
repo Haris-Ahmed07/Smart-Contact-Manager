@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" xmlns="http:www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>SignUp Page</title>
+</head>
+
+<body>
+
+	<section>
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col-md-8 offset-md-2">
+
+					<div class="my-card mt-1">
+
+
+						<!--Div To Show The Account Creation Messages-->
+						<div th:if="${session.message}" th:classappend="${session.message.type}"
+							class="alert alert-primary alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+							<p th:text="${session.message.content}"></p>
+
+							<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+						</div>
+
+						<!--Div To show The Icon-->
+						<div class="text-center">
+
+							<img style="width: 80px;" src="" th:src="@{/images/membership.png}" alt="" />
+
+						</div>
+
+						<!--Heading-->
+						<h1 class="text-center">Register Here</h1>
+
+
+						<form novalidate action="#" th:action="@{/do_register}" method="post" th:object="${user}">
+
+
+							<!--UserName Field-->
+							<div class="form-group">
+								<label for="usernamefield">Your UserName</label>
+								<input type="text" class="form-control" id="usernamefield" aria-describedby="emailHelp"
+									placeholder="Enter name" required name="name" th:value="${user.name}"
+									th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : '' ">
+
+								<!--To Show The Errors-->
+								<div class="invalid-feedback">
+									<p th:each="e : ${#fields.errors('name')}" th:text="${e}"></p>
+								</div>
+
+							</div>
+
+							<!--Email Field-->
+							<div class="form-group">
+								<label for="emailfield">Your Email address</label>
+								<input type="email" class="form-control" id="emailfield" aria-describedby="emailHelp"
+									placeholder="Enter email" required name="email" th:value="${user.email}"
+									th:classappend="${#fields.hasErrors('email')} ? 'is-invalid' : '' ">
+
+								<!--To Show The Errors-->
+								<div class="invalid-feedback">
+									<p th:each="e : ${#fields.errors('email')}" th:text="${e}"></p>
+								</div>
+
+							</div>
+
+							<!--Password Field-->
+							<div class="form-group">
+								<label for="passwordfield">Your Password</label>
+								<input type="password" required class="form-control" id="passwordfield"
+									placeholder="Password" name="password"
+									th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : '' ">
+
+								<!--To Show The Errors-->
+								<div class="invalid-feedback">
+									<p th:each="e : ${#fields.errors('password')}" th:text="${e}"></p>
+								</div>
+
+							</div>
+
+							<!--About Field-->
+							<div class="form-group">
+								<textarea placeholder="Enter something about yourself" id="mytextarea3" rows="6"
+									class="form-control" name="about" th:text="${user.about}"
+									th:classappend="${#fields.hasErrors('about')} ? 'is-invalid' : '' "></textarea>
+
+								<!--To Show The Errors-->
+								<div class="invalid-feedback">
+									<p th:each="e : ${#fields.errors('about')}" th:text="${e}"></p>
+								</div>
+
+							</div>
+
+							<!--Aggrement Field-->
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="agreement" name="agreement">
+								<label class="form-check-label" for="agreement">Accept terms and conditions</label>
+							</div>
+
+							<!--Button Fields-->
+							<div class="text-center ">
+								<button type="reset" class="btn btn-warning ">Reset</button>
+								<button type="submit" class="btn bg-primary text-white">Submit</button>
+							</div>
+
+
+						</form>
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+		<script src="https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		
+		<script>
+
+			tinymce.init({
+				selector: '#mytextarea3'
+			});
+		</script>
+
+	</section>
+
+</body>
+
+</html>

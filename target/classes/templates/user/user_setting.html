@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/userbase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+
+<body>
+
+	<section>
+
+		<div class="container">
+
+			<div class="card" style="border-radius: 10px;">
+
+				<div class="card-body" style="height: 600px;">
+
+					<a th:href="@{/user/change-password}" class="btn btn-block btn-success">Change Password</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<script>
+
+			$(document).ready(() => {
+				$(".item").removeClass("active-nav")
+				$("#setting-link").addClass("active-nav")
+			})
+
+		</script>
+
+
+	</section>
+
+
+</body>
+
+</html>

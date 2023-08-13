@@ -1,0 +1,17 @@
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\entities\User.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\repository\UserRepository.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\repository\ContactRepository.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\config\UserDetailsImpl.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\config\UserDetailsServiceImpl.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\SmartContactManagerApplication.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\controller\MainController.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\controller\SearchController.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\helper\Message.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\config\MyConfig.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\service\UserService.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\entities\Contact.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\controller\UserController.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\service\ContactService.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\controller\SignUpController.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\controller\ForgotController.java
+G:\Developments\SPRING\Projects\Smart-Contact-Manager\src\main\java\com\smart\service\EmailApiService.java

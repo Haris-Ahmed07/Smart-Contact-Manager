@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/userbase::Layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dash Board</title>
+</head>
+
+<body>
+	<section>
+
+		<div class="card mr-5 ml-5" style="border-radius: 10px;">
+
+			<div class="container mt-3">
+				<a th:href="@{/user/dashboard}" style="text-decoration: none; color:#000; padding-left: 30px;"><i
+						class="fa-solid fa-arrow-left fa-lg"></i></a>
+				<h1 class="text-center mt-3" style="font-weight: bold; color: #009688 !important;">MY CONTACTS</h1>
+			</div>
+
+
+
+
+			<div class="card-body my-50">
+
+				<div class="search-container">
+
+					<input onkeyup="search()" type="text" class="form-control" id="search-input"
+						placeholder="Search your contacts" />
+
+					<div class="search-result" style="display: none;">
+
+
+
+					</div>
+
+				</div>
+
+
+				<table class="table table-bordered table-hover table-responsive-md my-2">
+					<thead class="table-head">
+						<tr>
+							<th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ID</th>
+							<th scope="col">Name</th>
+							<th scope="col">&nbsp;&nbsp;Phone No</th>
+							<th scope="col">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email
+							</th>
+							<th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="contact : ${contacts}">
+
+							<th>
+								<a href="" th:href="@{'/user/contact/'+${contact.cId}}">
+									<span class="contact-tag" th:text="${'SCM2023-'+contact.cId}"></span>
+								</a>
+							</th>
+
+							<td>
+								<a href="" th:href="@{'/user/contact/'+${contact.cId}}">
+									<!--<i class="fa-solid fa-user contact-tag"></i>-->
+									<img src="" th:src="@{/images/profiles/contact_profile.jpeg}" alt=""
+										style="height: 30px;" />
+									<span class="contact-tag" th:text="${contact.name}"></span>
+								</a>
+
+							</td>
+
+							<td>
+								<a href="" th:href="@{'/user/contact/'+${contact.cId}}">
+									<span class="contact-tag" th:text="${contact.phone}"></span>
+								</a>
+							</td>
+
+							<td>
+								<a href="" th:href="@{'/user/contact/'+${contact.cId}}">
+									<span class="contact-tag" th:text="${contact.email}"></span>
+								</a>
+							</td>
+
+							<td>
+								<div class="button-group">
+									<form th:action="@{'/user/update/'+${contact.cId}}" method="post">
+										<button type="submit" class="btn btn-primary btn-sm">Update</button>
+									</form>
+									<button th:onclick="|deleteContact(${contact.cId})|"
+										class="btn btn-danger btn-sm">Delete</button>
+								</div>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+
+
+		</div>
+		
+		<script>
+			
+			$(document).ready(()=>{
+				$(".item").removeClass("active-nav")
+				$("#viewContacts-link").addClass("active-nav")
+			})
+			
+		</script>
+
+
+	</section>
+</body>
+
+</html>

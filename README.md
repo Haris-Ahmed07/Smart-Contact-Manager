@@ -31,7 +31,7 @@ Welcome to the Smart Contact Manager web application! This innovative solution i
 
 To get started with the Smart Contact Manager web application, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/smart-contact-manager.git`
+1. Clone the repository: `git clone https://github.com/Haris-Ahmed07/smart-contact-manager.git`
 2. Navigate to the project directory: `cd smart-contact-manager`
 3. Run the application: `run the projet using any IDE`
 4. Access the application in your web browser at `http://localhost:8080`
